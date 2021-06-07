@@ -77,7 +77,7 @@ def respuesta_renapo(response_renapo):
     
     return body
             
-
+#-----------------------------------------------------------------------------------------------------------
 def expresion_regular_curp(curp):
     re_curp = '^[A-Za-z]{1}[AEIOUaeiouXx]{1}[A-Za-z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HMhm]{1}(AS|as|BC|bc|BS|bs|CC|cc|CS|cs|CH|ch|CL|cl|CM|cm|DF|df|DG|dg|GT|gt|GR|gr|HG|hg|JC|jc|MC|mc|MN|mn|MS|ms|NT|nt|NL|nl|OC|oc|PL|pl|QT|qt|QR|qr|SP|sp|SL|sl|SR|sr|TC|tc|TS|ts|TL|tl|VZ|vz|YN|yn|ZS|zs|NE|ne)[B-Db-dF-Hf-hJ-Nj-nP-Tp-tV-Zv-z]{3}[0-9A-Za-z]{1}[0-9]{1}'
     patron = re.compile(re_curp)
