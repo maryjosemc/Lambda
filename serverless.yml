@@ -1,0 +1,59 @@
+
+
+service: curp-verification-baz
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  vpc:
+    securityGroupIds:
+      - sg-03078ff90bb8c553e
+    subnetIds:
+      - subnet-05d8846b8a033e7e3
+      - subnet-02216e505de7528c1
+  role:
+    arn:aws:iam::130710932330:role/lambda_dynamo_role
+
+    
+plugins:
+   - serverless-python-requirements
+
+
+
+functions:
+  verificaCurp:
+    handler: handler.verificaCurp
+    name: verificaCurp
+    description: Valida el CURP de un usuario a registrarse
+
+    events: 
+      - http:
+          path: /
+          method: get
+      - http:
+          path: /
+          method: ANY
+  
+
+resources:
+  Resources:
+    UsersDynamoDBTable: 
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        TableName: curps_unicos
+        AttributeDefinitions:
+          - AttributeName: "curp"
+            AttributeType: "S"
+        KeySchema:
+          - AttributeName: "curp"
+            KeyType: "HASH"
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        BillingMode: PROVISIONED
+        
+env_variables:
+  SQLALCHEMY_DATABASE_URI: >-
+    mysql+pymysql://user:password@/database?unix_socket=/cloudsql/project:us-central1:instance   

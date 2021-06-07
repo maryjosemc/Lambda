@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "template.dtd">
+<template keepFor="-1" label="Registro de gestores Baz 4055"
+  name="RegGestoresBaz4055" numbering="none" strict="strict"
+  strictPeriods="1" version="4" warning="warning">
+  <question constraint="0" id="rfc" label="RFC" protection="0"
+    rangeType="0" type="text"/>
+  <question constraint="0" id="CURP" identity="identity"
+    intRequired="intRequired" label="CURP" protection="0"
+    qBtn="Valida CURP" query="query" rangeType="0"
+    ref="https://n36e1vihe1.execute-api.us-east-1.amazonaws.com/dev/?curp=$curp&amp;user=$USER&amp;dominio=568"
+    regex="^[A-Za-z]{1}[AEIOUaeiouXx]{1}[A-Za-z]{2}[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1])[HMhm]{1}(AS|as|BC|bc|BS|bs|CC|cc|CS|cs|CH|ch|CL|cl|CM|cm|DF|df|DG|dg|GT|gt|GR|gr|HG|hg|JC|jc|MC|mc|MN|mn|MS|ms|NT|nt|NL|nl|OC|oc|PL|pl|QT|qt|QR|qr|SP|sp|SL|sl|SR|sr|TC|tc|TS|ts|TL|tl|VZ|vz|YN|yn|ZS|zs|NE|ne)[B-Db-dF-Hf-hJ-Nj-nP-Tp-tV-Zv-z]{3}[0-9A-Za-z]{1}[0-9]{1}"
+    required="required" type="text"/>
+  <question constraint="0" id="nombre" label="Nombre" protection="0"
+    rangeType="0" type="text"/>
+  <question constraint="0" id="apellido_paterno"
+    label="Apellido paterno" protection="0" rangeType="0" type="text"/>
+  <question constraint="0" id="apellido_materno"
+    label="Apellido materno" protection="0" rangeType="0" type="text"/>
+  <question constraint="0" display-key="display-key" id="sexo"
+    label="Sexo" protection="0" rangeType="0" type="text"/>
+  <question constraint="0" id="fecha_nacimiento"
+    label="Fecha de nacimiento" protection="0" rangeType="0" type="text"/>
+  <question constraint="0" id="entidad_nacimiento"
+    label="Entidad de nacimiento" protection="0" rangeType="0" type="text"/>
+  <question embed="embed" id="foto_personal" label="Fotografia personal"
+    rangeType="0" ref="width=640&amp;height=480" type="photo"/>
+  <question embed="embed" id="foto_ine" label="Fotografia INE"
+    rangeType="0" ref="width=640&amp;height=480" type="photo"/>
+  <question id="periodo" label="Periodo" rangeType="0" type="datetime"/>
+  <question constraint="0" id="estatus" label="Estatus" protection="0"
+    rangeType="0" type="text"/>
+  <question constraint="0" id="usuario" label="Usuario" protection="0"
+    rangeType="0" type="text"/>
+  <question constraint="0" id="name_user" label="Name del user"
+    protection="0" rangeType="0" type="text"/>
+  <question constraint="0" id="dominio_previo" label="Dominio previo"
+    protection="0" rangeType="0" type="text"/>
+  <question constraint="0" id="unicidad" label="Unicidad" protection="0"
+    query="query" rangeType="0"
+    ref="https://n36e1vihe1.execute-api.us-east-1.amazonaws.com/dev/?curp=$curp&amp;user=$USER&amp;dominio=568" type="text"/>
+  <group id="direccion" label="Direccion del gestor" subtype="group"/>
+  <question constraint="0" id="calle" label="Calle" protection="0"
+    rangeType="0" type="text"/>
+  <question constraint="0" id="no_exterior" label="Numero exterior"
+    protection="0" rangeType="0" type="text"/>
+  <question constraint="0" id="colonia" label="Colonia" protection="0"
+    rangeType="0" type="text"/>
+  <question constraint="0" id="localidad" label="Ciudad/Localidad"
+    protection="0" rangeType="0" type="text"/>
+  <question display="normal" id="estado" label="Estado" rangeType="0" type="select">
+    <option/>
+    <option value="30">Veracruz</option>
+  </question>
+  <question display="normal" id="municipio" label="Municipio"
+    rangeType="0" type="select">
+    <option/>
+    <option value="1">Orizaba</option>
+    <option value="2">Huiloapan de cuauhtemoc</option>
+  </question>
+  <question constraint="0" id="codigo_postal" label="CP" protection="0"
+    rangeType="0" type="text"/>
+  <group id="medios_contacto" label="Medios de contacto" subtype="group"/>
+  <question constraint="0" id="telefono" label="Telefono" protection="0"
+    rangeType="0" type="text"/>
+  <question id="email" label="Email" rangeType="0" type="email"/>
+</template>
+<?xml-stylesheet type="text/xsl" href="template.xsl"?>

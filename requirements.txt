@@ -1,0 +1,4 @@
+mysql.connector
+sshtunnel==0.1.5
+boto3
+requests
